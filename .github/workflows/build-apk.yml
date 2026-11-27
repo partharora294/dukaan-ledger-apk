@@ -16,9 +16,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
+      - uses: android-actions/setup-android@v3
       - name: Install dependencies and build web bundle
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
       - name: Initialize Android Capacitor & Build Debug APK
         run: |
